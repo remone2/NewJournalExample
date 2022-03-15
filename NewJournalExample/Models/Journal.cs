@@ -17,6 +17,13 @@ namespace NewJournalExample.Models
         public User User { get; set; }
         public int UserNumber { get; set; }
 
+        public User Editor { get; set; }
+        public int EditorId { get; set; }
+        
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy", ApplyFormatInEditMode = true)]
+        public DateTime Created { get; set; }
+            
         public ICollection<Comment> Comments { get; set; }
 
 

@@ -1,4 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using NewJournalExample.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<NewJournalExampleContext>(options =>
+
+    options.UseSqlServer(builder.Configuration.GetConnectionString("NewJournalExampleContext")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
